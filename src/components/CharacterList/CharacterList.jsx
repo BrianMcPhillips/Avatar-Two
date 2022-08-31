@@ -12,7 +12,7 @@ const CharacterList = () => {
 
   if(loading) return <h1>Loading...</h1>;
   return (
-    <ul>
+    <ul data-testid={'characterList'}>
       {characterStuff}
     </ul>
   );
