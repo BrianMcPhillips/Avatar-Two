@@ -3,8 +3,13 @@
 exports[`Character component renders Character 1`] = `
 <DocumentFragment>
   <figure>
-    <img />
-    <figcaption />
+    <img
+      alt="Test"
+      src="test.png"
+    />
+    <figcaption>
+      Test
+    </figcaption>
   </figure>
 </DocumentFragment>
 `;
