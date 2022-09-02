@@ -16,3 +16,17 @@ export const useCharacters = () => {
     characters
   };
 };
+
+export const useSingleCharacter = id => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+
+  }, []);
+
+  return {
+    loading,
+    data
+  };
+};
