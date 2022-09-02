@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getCharacters } from '../services/avatar-api';
+import { getCharacterById, getCharacters } from '../services/avatar-api';
 
 export const useCharacters = () => {
   const [loading, setLoading] = useState(true);
@@ -22,7 +22,9 @@ export const useSingleCharacter = id => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-
+    getCharacterById(id)
+      .then(data => setData(data))
+      .finally(() => setLoading(false));
   }, []);
 
   return {
