@@ -26,6 +26,7 @@ describe('CharacterDetail component', () => {
 
     return waitFor(() => {
       expect(characterDetail).not.toBeEmptyDOMElement();
+      expect(characterDetail).toHaveTextContent('Arik');
     });
   });
 });
