@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import CharacterDetail from './CharacterDetail';
 import { getCharacterById } from '../../services/avatar-api';
 
@@ -18,9 +18,15 @@ describe('CharacterDetail component', () => {
     });
   });
 
-  it('display a character after a load', () => {
+  it('display a character after a load', async() => {
     render(<CharacterDetail />);
 
     screen.getByText('Loading...');
+    const characterDetail = await screen.findByTestId('characterDetail');
+
+    return waitFor(() => {
+      expect(characterDetail).not.toBeEmptyDOMElement();
+      expect(characterDetail).toHaveTextContent('Arik');
+    });
   });
 });
