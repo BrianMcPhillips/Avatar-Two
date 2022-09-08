@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import CharacterDetail from './CharacterDetail';
 import { getCharacterById } from '../../services/avatar-api';
+import { MemoryRouter } from 'react-router-dom';
 
 jest.mock('../../services/avatar-api.js');
 
@@ -19,7 +20,11 @@ describe('CharacterDetail component', () => {
   });
 
   it('display a character after a load', async() => {
-    render(<CharacterDetail />);
+    render(
+      <MemoryRouter>
+        <CharacterDetail />
+      </MemoryRouter>
+    );
 
     screen.getByText('Loading...');
     const characterDetail = await screen.findByTestId('characterDetail');

@@ -4,16 +4,23 @@ import { getCharacterById, getCharacters } from '../services/avatar-api';
 export const useCharacters = () => {
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     getCharacters()
       .then(data => setCharacters(data))
       .finally(() => setLoading(false));
-  }, []);
+  }, [page]);
+
+  const pageUp = () => setPage(() => page + 1);
+  const pageDown = () => setPage(() => page - 1);
 
   return {
     loading,
-    characters
+    characters,
+    page,
+    pageUp,
+    pageDown
   };
 };
 
