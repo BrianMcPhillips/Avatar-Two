@@ -3,13 +3,17 @@
 exports[`Character component renders Character 1`] = `
 <DocumentFragment>
   <figure>
-    <img
-      alt="Test"
-      src="test.png"
-    />
-    <figcaption>
-      Test
-    </figcaption>
+    <a
+      href="/detail/1234"
+    >
+      <img
+        alt="Test"
+        src="test.png"
+      />
+      <figcaption>
+        Test
+      </figcaption>
+    </a>
   </figure>
 </DocumentFragment>
 `;

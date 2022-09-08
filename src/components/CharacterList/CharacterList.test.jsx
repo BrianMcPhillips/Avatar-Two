@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import CharacterList from './CharacterList';
 import { getCharacters } from '../../services/avatar-api';
+import { MemoryRouter } from 'react-router-dom';
 
 jest.mock('../../services/avatar-api.js');
 
@@ -20,7 +21,11 @@ describe('CharacterList component', () => {
   ]));
 
   it('displays a list of characters after a brief load', async() => {
-    render(<CharacterList />);
+    render(
+      <MemoryRouter>
+        <CharacterList />
+      </MemoryRouter>
+    );
 
     screen.getByText('Loading...');
 
