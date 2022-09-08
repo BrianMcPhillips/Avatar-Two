@@ -7,7 +7,7 @@ export const useCharacters = () => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    getCharacters()
+    getCharacters(page)
       .then(data => setCharacters(data))
       .finally(() => setLoading(false));
   }, [page]);
