@@ -2,6 +2,23 @@
 
 exports[`App component renders App 1`] = `
 <DocumentFragment>
+  <header
+    class="header"
+  >
+    Avatar
+    <div>
+      <button
+        class="links"
+      >
+        <a
+          href="/"
+          style="text-decoration: none;"
+        >
+          Home
+        </a>
+      </button>
+    </div>
+  </header>
   <h1>
     Loading...
   </h1>
