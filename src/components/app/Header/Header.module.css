@@ -9,3 +9,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.links {
+  position: absolute;
+  right: 5vh;
+  text-decoration: none;
+}

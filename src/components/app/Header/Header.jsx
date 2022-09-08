@@ -6,7 +6,9 @@ const Header = () => (
   <header className={styles.header}>
     Avatar
     <div>
-      <Link to={'/'}>Home</Link>
+      <button className={styles.links}>
+        <Link to={'/'} style={{textDecoration: 'none' }}>Home</Link>
+      </button>
     </div>
   </header>
 );
