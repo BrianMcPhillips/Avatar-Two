@@ -27,6 +27,10 @@ describe('CharacterDetail component', () => {
     return waitFor(() => {
       expect(characterDetail).not.toBeEmptyDOMElement();
       expect(characterDetail).toHaveTextContent('Arik');
+      screen.getByText('His');
+      screen.getByText('Arik');
+      screen.getByText('Earth Kingdom Air Force');
+      screen.getByAltText('Arik');
     });
   });
 });
