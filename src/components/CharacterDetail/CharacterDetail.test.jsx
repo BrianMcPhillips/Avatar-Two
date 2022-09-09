@@ -38,4 +38,15 @@ describe('CharacterDetail component', () => {
       screen.getByAltText('Arik');
     });
   });
+
+  it('displays error message on error', () => {
+    getCharacterById.mockRejectedValue('Unable to fetch from API');
+    render(
+      <MemoryRouter>
+        <CharacterDetail />
+      </MemoryRouter>
+    );
+    
+    return screen.findByText('Something went wrong. Try again');
+  });
 });
