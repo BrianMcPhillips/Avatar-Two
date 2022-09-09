@@ -9,11 +9,11 @@ const CharacterPage = () => {
       <CharacterList page={page}/>
       <div>
         <button
-          onClick={() => setPage(page => page + 1)}
+          onClick={() => setPage(page => page - 1)}
           disabled={page <= 1}
         >&lt;</button>
         <button
-          onClick={() => setPage(page => page - 1)}
+          onClick={() => setPage(page => page + 1)}
           disabled={page >= 4}
         >&gt;</button>
       </div>
