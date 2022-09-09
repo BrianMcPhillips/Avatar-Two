@@ -4,7 +4,7 @@ import { useSingleCharacter } from '../../hooks/characters';
 
 const CharacterDetail = () => {
   const { id } = useParams();
-  const { loading, data: {
+  const { loading, error, data: {
     image,
     name,
     affiliation,
@@ -12,6 +12,8 @@ const CharacterDetail = () => {
   } } = useSingleCharacter(id);
 
   if(loading) return <h1>Loading...</h1>;
+  if(error) return <h1>Something went wrong. Try again</h1>;
+
   return (
     <div data-testid={'characterDetail'}>
       <img src={image} alt={name} />
