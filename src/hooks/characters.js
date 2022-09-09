@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import { getCharacterById, getCharacters } from '../services/avatar-api';
 
-export const useCharacters = () => {
+export const useCharacters = page => {
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
-  const [page, setPage] = useState(1);
 
   useEffect(() => {
     getCharacters(page)
@@ -12,15 +11,9 @@ export const useCharacters = () => {
       .finally(() => setLoading(false));
   }, [page]);
 
-  const pageUp = () => setPage(() => page + 1);
-  const pageDown = () => setPage(() => page - 1);
-
   return {
     loading,
-    characters,
-    page,
-    pageUp,
-    pageDown
+    characters
   };
 };
 

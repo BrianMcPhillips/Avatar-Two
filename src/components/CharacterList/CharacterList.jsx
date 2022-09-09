@@ -1,9 +1,13 @@
 import React from 'react';
 import { useCharacters } from '../../hooks/characters';
 import Character from '../Character/Character';
+import PropTypes from 'prop-types';
 
-const CharacterList = () => {
-  const { loading, characters } = useCharacters();
+const CharacterList = ({ page }) => {
+  const { 
+    loading, 
+    characters
+  } = useCharacters(page);
   const characterStuff = characters.map(character => 
     <li key={character.id}>
       <Character {...character}/>
@@ -16,6 +20,10 @@ const CharacterList = () => {
       {characterStuff}
     </ul>
   );
+};
+
+CharacterList.propTypes = {
+  page: PropTypes.number
 };
 
 export default CharacterList;
