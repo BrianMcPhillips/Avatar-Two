@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 const CharacterList = ({ page }) => {
   const { 
     loading, 
-    characters
+    characters,
+    error
   } = useCharacters(page);
   const characterStuff = characters.map(character => 
     <li key={character.id}>
@@ -15,6 +16,7 @@ const CharacterList = ({ page }) => {
   );
 
   if(loading) return <h1>Loading...</h1>;
+  if(error) return <h1>Something went wrong. Try again</h1>;
   return (
     <ul data-testid={'characterList'}>
       {characterStuff}
