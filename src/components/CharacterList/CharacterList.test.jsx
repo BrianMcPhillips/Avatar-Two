@@ -36,4 +36,15 @@ describe('CharacterList component', () => {
       expect(characterList).toHaveTextContent('test dos');
     });
   });
+
+  it('displays error message on error', () => {
+    getCharacters.mockRejectedValue('Unable to fetch from API');
+    render(
+      <MemoryRouter>
+        <CharacterList />
+      </MemoryRouter>
+    );
+    
+    return screen.findByText('Something went wrong. Try again');
+  });
 });

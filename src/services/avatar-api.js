@@ -1,6 +1,6 @@
-export const getCharacters = async() => {
+export const getCharacters = async(page) => {
   const res = await fetch(
-    'https://last-airbender-api.herokuapp.com/API/v1/characters'
+    `https://last-airbender-api.herokuapp.com/API/v1/characters?perPage=${5}&Page=${page}`
   );
   const json = await res.json();
   

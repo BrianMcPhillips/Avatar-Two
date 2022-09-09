@@ -11,7 +11,7 @@ describe('Character component', () => {
         <Character 
           name="Test"
           image="test.png"
-          id="1234"
+          id={1234}
         />
       </MemoryRouter>
     );
